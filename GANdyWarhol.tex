@@ -1,0 +1,256 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usetheme{Boadilla}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+h
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{lmodern}
+\usepackage{subfig}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={GANdy Warhol Dataset},
+  pdfauthor={Natan, Thomas, Sarkis, Gustavo},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{multicol}
+\usepackage{booktabs}
+\makeatletter
+\def\fps@figure{h}
+\makeatother
+
+\title{GANdy Warhol Dataset}
+\author{Natan, Thomas, Sarkis, Gustavo}
+\date{15th of September 2019}
+
+\begin{document}
+\frame{\titlepage}
+
+\section{Getting Data}
+\begin{frame}[fragile]{Obtaining the Data}
+\protect\hypertarget{obtaining-the-data}{}
+
+WikiArt API
+
+\footnotesize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"title"}\FunctionTok{:} \StringTok{"A Cat Named Sam"}\FunctionTok{,}
+  \DataTypeTok{"contentId"}\FunctionTok{:} \DecValTok{229254}\FunctionTok{,}
+  \DataTypeTok{"artistContentId"}\FunctionTok{:} \DecValTok{229251}\FunctionTok{,}
+  \DataTypeTok{"artistName"}\FunctionTok{:} \StringTok{"Andy Warhol"}\FunctionTok{,}
+  \DataTypeTok{"completitionYear"}\FunctionTok{:} \DecValTok{1954}\FunctionTok{,}
+  \DataTypeTok{"yearAsString"}\FunctionTok{:} \StringTok{"1954"}\FunctionTok{,}
+  \DataTypeTok{"width"}\FunctionTok{:} \DecValTok{335}\FunctionTok{,}
+  \DataTypeTok{"image"}\FunctionTok{:} \StringTok{"https://uploads7.wikiart.org/images/}
+\StringTok{                    andy{-}warhol/a{-}cat{-}named{-}sam.jpg"}\FunctionTok{,}
+  \DataTypeTok{"height"}\FunctionTok{:} \DecValTok{448}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\begin{frame}{Dataset}
+\protect\hypertarget{dataset}{}
+
+\begin{itemize}
+\tightlist
+\item
+  Unstructured
+\item
+  222 images (30 MB)
+\end{itemize}
+
+\end{frame}
+
+\section{Cleaning the Data}
+\begin{frame}{Crop and Scale}
+\protect\hypertarget{crop-and-scale}{}
+
+\begin{columns}
+\column{0.5\textwidth}
+\includegraphics[height=0.75\textheight]{images/cow-2.jpg}
+
+\column{0.5\textwidth}
+\includegraphics[width=0.85\textwidth]{images/botticelli-dettaglio.jpg}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Remove 404 Errors}
+\protect\hypertarget{remove-404}{}
+
+\footnotesize
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{<!DOCTYPE }\NormalTok{html PUBLIC "{-}//W3C//DTD XHTML 1.0 Strict//EN"}
+\NormalTok{    "http://www.w3.org/TR/xhtml1/DTD/xhtml1{-}strict.dtd"}\DataTypeTok{>}
+\KeywordTok{<html}\OtherTok{ xmlns=}\StringTok{"http://www.w3.org/1999/xhtml"}\KeywordTok{>}
+\KeywordTok{<head>}
+\KeywordTok{<meta}\OtherTok{ http{-}equiv=}\StringTok{"Content{-}Type"}\OtherTok{ content=}\StringTok{"text/html;}
+\StringTok{    charset=iso{-}8859{-}1"}\KeywordTok{/>}
+\KeywordTok{<title>}\NormalTok{403 {-} Forbidden: Access is denied.}\KeywordTok{</title>}
+\KeywordTok{</head>}
+\KeywordTok{<body>}
+\KeywordTok{<div}\OtherTok{ id=}\StringTok{"header"}\KeywordTok{><h1>}\NormalTok{Server Error}\KeywordTok{</h1></div>}
+\KeywordTok{<div}\OtherTok{ id=}\StringTok{"content"}\KeywordTok{>}
+ \KeywordTok{<div}\OtherTok{ class=}\StringTok{"content{-}container"}\KeywordTok{><fieldset>}
+  \KeywordTok{<h2>}\NormalTok{403 {-} Forbidden: Access is denied.}\KeywordTok{</h2>}
+  \KeywordTok{<h3>}\NormalTok{You do not have permission to view this directory or}
+\NormalTok{    page using the credentials that you supplied.}\KeywordTok{</h3>}
+ \KeywordTok{</fieldset></div>}
+\KeywordTok{</div>}
+\KeywordTok{</body>}
+\KeywordTok{</html>}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\begin{frame}{Remove duplicates}
+\protect\hypertarget{remove-duplicates}{}
+
+\begin{center}
+\includegraphics[width=0.35\textwidth]{images/flowers.jpg}
+\hspace{8px}
+\includegraphics[width=0.35\textwidth]{images/flowers-2.jpg}
+
+\includegraphics[width=0.35\textwidth]{images/flowers-3.jpg}
+\hspace{8px}
+\includegraphics[width=0.35\textwidth]{images/flowers-4.jpg}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Unstylized Images}
+\protect\hypertarget{unstylized-images}{}
+
+\begin{center}
+    \includegraphics[height=0.85\textheight]{images/paris-review-poster-1967.jpg}
+\end{center}
+
+\end{frame}
+
+\end{document}
